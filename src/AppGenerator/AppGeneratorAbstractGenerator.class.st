@@ -14,7 +14,7 @@ Class {
 { #category : 'private' }
 AppGeneratorAbstractGenerator class >> repositoryLocation [
 
-	^ (IceRepository repositoryNamed: 'PharoApplicationGenerator') location
+	^ (IceRepository repositoryNamed: 'Packager') location
 ]
 
 { #category : 'external resources' }
