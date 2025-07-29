@@ -15,6 +15,7 @@ BaselineOfApplicationGenerator >> baseline: spec [
 			package: 'AppGenerator-OSX' with: [ spec requires: #('AppGenerator')];
 			package: 'AppGenerator-Windows' with: [ spec requires: #('AppGenerator')];
 			package: 'AppGenerator-Example' with: [ spec requires: #('Core')];
+			package: 'PackagerProject' with: [ spec requires: #('Core')];
 			
 			group: 'Core' with: #('AppGenerator' 'AppGenerator-Support' 'AppGenerator-Windows' 'AppGenerator-OSX');
 			group: 'Support' with: #('AppGenerator-Support');
