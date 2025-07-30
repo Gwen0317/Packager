@@ -19,7 +19,7 @@ BaselineOfApplicationGenerator >> baseline: spec [
 			
 			group: 'Core' with: #('AppGenerator' 'AppGenerator-Support' 'AppGenerator-Windows' 'AppGenerator-OSX');
 			group: 'Support' with: #('AppGenerator-Support');
-			group: 'default' with: #('Core' 'Support' 'AppGenerator-Example') ].
+			group: 'default' with: #('Core' 'Support' 'AppGenerator-Example' 'PackagerProject') ].
 
 	spec
 		for: #'pharo11.x'
