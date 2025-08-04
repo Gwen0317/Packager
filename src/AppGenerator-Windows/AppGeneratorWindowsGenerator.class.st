@@ -95,6 +95,7 @@ AppGeneratorWindowsGenerator >> generate [
 	self copyIcon.
 	self copyIncludes.
 	self copySources.
+	self copyVM.
 	self generateCMakeScript.
 	
 	self generateArtifactScript.
