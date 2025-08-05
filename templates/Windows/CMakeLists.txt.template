@@ -57,15 +57,14 @@ execute_process(
 # We will have a serie of targets to download the image, download a vm and to load the code.
 #
 
-make_directory($\{CMAKE_CURRENT_BINARY_DIR})
 make_directory($\{CMAKE_CURRENT_BINARY_DIR}/build/vm)
 make_directory($\{CMAKE_CURRENT_BINARY_DIR}/build/resources)
 
 # Adding a task to download the vm
 add_custom_command(
 	OUTPUT $\{CMAKE_CURRENT_BINARY_DIR}/build/vm/PharoVMCore.dll
-	COMMAND unzip ${CMAKE_CURRENT_BINARY_DIR}/external/latest10.zip
-	COMMAND rm ${CMAKE_CURRENT_BINARY_DIR}/external/latest10.zip
+	COMMAND unzip $\{CMAKE_CURRENT_BINARY_DIR}/external/latest10.zip
+	COMMAND rm $\{CMAKE_CURRENT_BINARY_DIR}/external/latest10.zip
 	WORKING_DIRECTORY $\{CMAKE_CURRENT_BINARY_DIR}/build/vm
 	COMMENT "Downloading Pharo 10 VM (headless)")
 
@@ -83,8 +82,8 @@ add_custom_command(
 #
 add_custom_command(
 	OUTPUT  $\{CMAKE_CURRENT_BINARY_DIR}/build/include/pharovm/pharo.h
-	COMMAND unzip ${CMAKE_CURRENT_BINARY_DIR}/external/include/latest10.zip
-	COMMAND rm ${CMAKE_CURRENT_BINARY_DIR}/external/include/latest10.zip
+	COMMAND unzip $\{CMAKE_CURRENT_BINARY_DIR}/external/include/latest10.zip
+	COMMAND rm $\{CMAKE_CURRENT_BINARY_DIR}/external/include/latest10.zip
 	WORKING_DIRECTORY $\{CMAKE_CURRENT_BINARY_DIR}/build
 	COMMENT "Downloading Pharo 10 VM Headers")
 
