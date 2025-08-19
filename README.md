@@ -79,6 +79,7 @@ The process uses some external tools, you should have installed:
 
 # Script to retrieve the latest version of the external folder
 
+```.bat
 @echo off
 setlocal enabledelayedexpansion
 
@@ -103,4 +104,7 @@ powershell -Command "Invoke-WebRequest -Uri '%INCLUDE_URL%' -OutFile '%SCRIPT_DI
 
 echo Done!
 pause
+
+```
+
 
