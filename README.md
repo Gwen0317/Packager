@@ -75,3 +75,32 @@ The process uses some external tools, you should have installed:
 - Brew (https://brew.sh/)
 - ImageMagick from Brew (brew install imagemagick)
 - create-dmg from Brew (brew install create-dmg)
+
+
+# Script to retrieve the latest version of the external folder
+
+@echo off
+setlocal enabledelayedexpansion
+
+REM === Définir les URLs des fichiers à télécharger ===
+set "VM_URL=http://files.pharo.org/vm/pharo-spur64-headless/Windows-x86_64/latest10.zip"
+set "INCLUDE_URL=http://files.pharo.org/vm/pharo-spur64-headless/Windows-x86_64/include/latest10.zip"
+
+REM === Obtenir le chemin absolu du dossier du .bat ===
+set "SCRIPT_DIR=%~dp0"
+
+REM === Créer les dossiers nécessaires ===
+mkdir "%SCRIPT_DIR%external"
+mkdir "%SCRIPT_DIR%external\include"
+
+REM === Télécharger le fichier VM ===
+echo Downloading VM...
+powershell -Command "Invoke-WebRequest -Uri '%VM_URL%' -OutFile '%SCRIPT_DIR%external\latest10.zip'"
+
+REM === Télécharger le fichier include ===
+echo Downloading VM Headers...
+powershell -Command "Invoke-WebRequest -Uri '%INCLUDE_URL%' -OutFile '%SCRIPT_DIR%external\include\latest10.zip'"
+
+echo Done!
+pause
+
